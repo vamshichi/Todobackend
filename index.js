@@ -5,9 +5,9 @@ const rootRouter = require('./routes/index')
 const port = process.env.PORT || 3001;
 const app = express();
 
-app.use(cors(
+app.use(cors({
   origin: "http://localhost:5173"
-  ));
+}));
 
 app.use('/api/v1',rootRouter)
 
