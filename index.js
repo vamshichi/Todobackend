@@ -5,12 +5,11 @@ const rootRouter = require('./routes/index')
 const port = process.env.PORT || 3001;
 const app = express();
 
-app.use(express.json());
-app.use(cors(
-     origin:["http://localhost:5173"],
-     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+app.use(cors({
+  origin: ["http://localhost:5173"],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
-));
+}));
 
 app.use('/api/v1',rootRouter)
 
